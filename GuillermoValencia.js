@@ -2,7 +2,7 @@
 
 
 function sayHi(){
-    console.log("hi i am Guillermo");
+    console.log("Hi, I am Guillermo");
 }
 
 sayHi();
@@ -11,7 +11,9 @@ sayHi();
 
 let testWord = "esternocleidomastoideo";
 function wordCutter(word) {
-   // :)
+    for (let i = 0; i < testWord.length; i++) {
+        console.log(testWord.charAt(i));
+      }
 }
 wordCutter(testWord);
 
