@@ -25,6 +25,7 @@ wordCutter(testWord);
 ahí contenido, debe soportar mayúsculas y minúsculas sin importar
 la variación, es lo mismo Carro, CARRO o carro.*/
 
+console.log("");
 console.log("--------------------------------------");
 console.log("EXERCISE #2");
 
@@ -65,6 +66,11 @@ entregado por parámetro y puede variar en cantidad de palabras
 del arreglo de entrada libremente, debe retornar un objeto
 con los valores mencionados*/
 
+//Does not working
+console.log("");
+console.log("--------------------------------------");
+console.log("EXERCISE #3");
+
 let testSampleList = [
     "Capitan",
     "Comandante",
@@ -76,11 +82,32 @@ let testSampleList = [
 ];
 
 function wordLengthClassifier(wordsList) {
-    // :)
+    let largestWord = wordsList[0];
+    let smallestWord = wordsList[0];
+    for (let i = 0; i < wordsList.length; i++) {
+        let currentWord = wordsList[i];
+        if (currentWord.charAt(i) > largestWord.charAt(i)) {
+            largestWord = currentWord;
+        }
+    }
+
+    for (let i = 0; i < wordsList.length; i++) {
+        let currentWord2 = wordsList[i];
+        if (currentWord2.charAt(i) > smallestWord.charAt(i)) {
+            smallestWord = currentWord2;
+        }
+    }
+    console.log("In this list, the largest word is " + largestWord + " , the smallest one is " + smallestWord);
 }
+wordLengthClassifier(testSampleList);
 
 
 /*Dado un string retorna si este es o no un palíndromo. No debe diferenciar entre mayúsculas y minúsculas*/
+
+//I havent done it
+console.log("");
+console.log("--------------------------------------");
+console.log("EXERCISE #4");
 
 let onVerificationWordA = "reconocer";
 let onVerificationWordB = "querer";
@@ -88,12 +115,17 @@ let onVerificationWordC = "Gomosos";
 let onVerificationWordD = "Somos";
 
 function palindromeVerifier(word) {
-   // :)
+   
 }
 
 
 /*Dado un objeto que contiene una lista de palabras contar el
 número de letras vocales y consonantes y retornarlo en un arreglo de 2 posiciones.*/
+
+console.log("");
+console.log("--------------------------------------");
+console.log("EXERCISE #5");
+
 let containerTestObject = {
     list:["Cumbamba", "Oreja", "Nariz", "Ojo", "Lengua", "Diente"]
 }
@@ -103,12 +135,19 @@ function lettersCounter(objectContainer) {
 
 
 /*Dado 2 arreglos de strings retornar un arreglo con todos los strings.*/
+
+console.log("");
+console.log("--------------------------------------");
+console.log("EXERCISE #6");
+
 let wordArrayA = ["hola", "¿" ,"cómo", "estás", "?"];
 let wordArrayB = ["te", "ves" ,"igual", "te", "ves", "igual"];
 
 function arrayJoiner(listA, listB) {
- // :)
+    const joinArrays = listA.concat(listB);
+    console.log(joinArrays);
 }
+arrayJoiner(wordArrayA,wordArrayB);
 
 
 /*Dado un arreglo de strings indicar qué posiciones del arreglo
