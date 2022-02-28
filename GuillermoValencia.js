@@ -4,10 +4,14 @@
 function sayHi(){
     console.log("Hi, I am Guillermo");
 }
-
 sayHi();
 
+console.log("--------------------------------------");
+console.log("");
+
 /*Dada una cadena de texto (string) separe y muestre en consola los caracteres de forma desordenada uno por línea, 1 caracter a la vez.*/
+
+console.log("EXERCISE #1");
 
 let testWord = "esternocleidomastoideo";
 function wordCutter(word) {
@@ -20,6 +24,9 @@ wordCutter(testWord);
 /*Dado un string buscar en un listado e indicar si se encuentra o no
 ahí contenido, debe soportar mayúsculas y minúsculas sin importar
 la variación, es lo mismo Carro, CARRO o carro.*/
+
+console.log("--------------------------------------");
+console.log("EXERCISE #2");
 
 let testTargetWordA = "Sabrosura";
 let testTargetWordB = "Sazón";
@@ -37,7 +44,18 @@ let testWordsList = [
 // pruebe para cada palabra A, B y C
 function wordSearcherIgnoreCase(targetWord, wordsList) {
    // :)
+   for(let i = 0; i < wordsList.length; i++) {
+    if(targetWord === wordsList[i] || targetWord === wordsList[i].toUpperCase()
+    || targetWord === wordsList[i].toLowerCase()) {
+        console.log("The word is in the list");
+
+    }else{
+        console.log("The word is not in the list");
+    }
+   }
 }
+
+wordSearcherIgnoreCase("Carro", testWordsList);
 
 
 
