@@ -96,7 +96,6 @@ let onVerificationWordC = "Gomosos";
 let onVerificationWordD = "Somos";
 
 function palindromeVerifier(word) {
-    console.log(word.toLowerCase())
     let palindromeWord = word.toLowerCase().split("").reverse().join("");
    if ( palindromeWord === word.toLowerCase() ) {
        console.log("The word " + word + " is palindrome")
@@ -121,8 +120,24 @@ let containerTestObject = {
     list:["Cumbamba", "Oreja", "Nariz", "Ojo", "Lengua", "Diente"]
 }
 function lettersCounter(objectContainer) {
-   // :)
-}
+    let bodyPartsList = objectContainer.list;
+    let countVowels = 0;
+    let countConsonants = 0;
+    bodyPartsList.forEach(wordOfTheList=>{
+        wordOfTheList.split("").forEach(eachLetter=>{
+            if( eachLetter === "a" || eachLetter==="e" || eachLetter==="i" || eachLetter === "o" || eachLetter === "u"
+            || eachLetter === "A" || eachLetter === "E" || eachLetter === "I" || eachLetter === "O" || eachLetter === "U"  ) {
+                countVowels++;
+             }
+            else{
+                countConsonants++;
+            }
+        })
+    })
+    console.log("The total number of vowels is " + countVowels +" and the total number of consonants is" + countConsonants);
+ }
+ lettersCounter(containerTestObject);
+
 
 
 /*Dado 2 arreglos de strings retornar un arreglo con todos los strings.*/
