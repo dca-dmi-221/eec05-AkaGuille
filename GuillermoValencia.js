@@ -15,10 +15,12 @@ console.log("EXERCISE #1");
 
 let testWord = "esternocleidomastoideo";
 function wordCutter(word) {
-    const disorganizedWord = word.split("").sort().join("");
-    for (let i = 0; i < word.length; i++) {
-        console.log(word.charAt(i));
-      }
+    word = word.split("");
+    let disorganizedWord = word.sort(function() {return Math.random() -1});
+    disorganizedWord = disorganizedWord.join("");
+    for (let i = 0; i < disorganizedWord.length; i++) {
+        console.log(disorganizedWord.charAt(i)); 
+    }
 }
 wordCutter(testWord);
 
