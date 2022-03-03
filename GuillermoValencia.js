@@ -47,25 +47,9 @@ let testWordsList = [
 ];
 
 // pruebe para cada palabra A, B y C
-function normalizeWord(word) {
-    return word.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace("0","o").toUpperCase();
-}
-
 function wordSearcherIgnoreCase(targetWord, wordsList) {
-    /*let normalizeCurrentWord = normalizeWord(targetWord);
-    const normalizeList = [];
-    for (let i = 0; i < wordsList.length; i++) {
-      normalizeList.push(wordSearcherIgnoreCase(wordsList[i])) 
-    }
-  
-    let result = (normalizeList.includes(normalizeCurrentWord));
-    console.log("The word " + targetWord + "is in" + wordsList);
-    */
+    
 }
-wordSearcherIgnoreCase(testTargetWordA, testWordsList);
-//wordSearcherIgnoreCase(testTargetWordB, testWordsList);
-//wordSearcherIgnoreCase(testTargetWordC, testWordsList);
-
 
 
 
@@ -200,8 +184,16 @@ let testWordToExplore = "amar";
 let wordsToVerify = ["amar", "arma", "rana" , "mara", "rama", "roma", "amor", "ramon", "omar"];
 
 function anagramVerifier(wordToExplore, listOfWords) {
-   
+    let listOfWordsArray = [];
+    wordsToVerify.forEach((word, i) => {
+        if (word.split("").every(eachLetter => {
+                return testWordToExplore.includes(eachLetter);
+            }))
+            listOfWordsArray.push(i);
+    })
+    console.log("The anagram of the word " + wordToExplore + " is in the list");
 }
+anagramVerifier(testWordToExplore, wordsToVerify);
 
 /*Dado un objeto que contiene 2 arreglos, retornar un objeto con 1
 arreglo que contiene las palabras sin vocales.*/
