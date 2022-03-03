@@ -46,9 +46,24 @@ let testWordsList = [
 ];
 
 // pruebe para cada palabra A, B y C
-function wordSearcherIgnoreCase(targetWord, wordsList) {
-   
+function normalizeWord(word) {
+    return word.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace("0","o").toUpperCase();
 }
+
+function wordSearcherIgnoreCase(targetWord, wordsList) {
+    /*let normalizeCurrentWord = normalizeWord(targetWord);
+    const normalizeList = [];
+    for (let i = 0; i < wordsList.length; i++) {
+      normalizeList.push(wordSearcherIgnoreCase(wordsList[i])) 
+    }
+  
+    let result = (normalizeList.includes(normalizeCurrentWord));
+    console.log("The word " + targetWord + "is in" + wordsList);
+    */
+}
+wordSearcherIgnoreCase(testTargetWordA, testWordsList);
+//wordSearcherIgnoreCase(testTargetWordB, testWordsList);
+//wordSearcherIgnoreCase(testTargetWordC, testWordsList);
 
 
 
@@ -74,15 +89,30 @@ let testSampleList = [
 ];
 
 function wordLengthClassifier(wordsList) {
-    let largestWord = wordsList[i];
-    let smallestWord = wordsList[i];
-
+    let theLongestWord = wordsList[0];
+    let theShortestWord = wordsList[0];
+    let total = 0;
+    let promedio = 0;
+    let object = {};
     for (let i = 0; i < wordsList.length; i++) {
-        const element = array[i];
-        
+        const currentWord = wordsList[i];
+        total += currentWord.length;
+        promedio = total / wordsList.length
+        if (currentWord.length > theLongestWord.length) {
+            theLongestWord = currentWord;
+        }
+        if (currentWord.length < theShortestWord.length) {
+            theShortestWord = currentWord;
+        }
+        object = {
+            theShortestWordIs: theShortestWord,
+            theLargestWordIs: theLongestWord,
+            averageSize: promedio.toFixed(2),
+        };
     }
+    console.log(object);
 }
-
+wordLengthClassifier(testSampleList);
 
 
 
@@ -185,8 +215,10 @@ let testObjMultiContainer = {
 };
 
 function vocalsRemoverFromObject(objectMultiContainer) {
- 
+    // :(
 }
+
+
 
 /*Dado un arreglo de palabras reemplazar la última vocal por una x y retornar dicho arreglo.*/
 
@@ -213,5 +245,5 @@ let testListA = ["amor", "sabor", "calor","firma", "mara"];
 let testListB = ["roma", "robar", "portar", "arma", "mora"];
 
 function doubleListVerifier(listA, listB) {
-    
+    //
 }
