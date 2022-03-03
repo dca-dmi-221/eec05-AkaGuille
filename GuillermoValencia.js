@@ -1,5 +1,6 @@
 'use strict'
 
+// :(
 
 function sayHi(){
     console.log("Hi, I am Guillermo");
