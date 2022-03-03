@@ -15,8 +15,9 @@ console.log("EXERCISE #1");
 
 let testWord = "esternocleidomastoideo";
 function wordCutter(word) {
-    for (let i = 0; i < testWord.length; i++) {
-        console.log(testWord.charAt(i));
+    const disorganizedWord = word.split("").sort().join("");
+    for (let i = 0; i < word.length; i++) {
+        console.log(word.charAt(i));
       }
 }
 wordCutter(testWord);
@@ -44,19 +45,9 @@ let testWordsList = [
 
 // pruebe para cada palabra A, B y C
 function wordSearcherIgnoreCase(targetWord, wordsList) {
-   // :)
-   for(let i = 0; i < wordsList.length; i++) {
-    if(targetWord === wordsList[i] || targetWord === wordsList[i].toUpperCase()
-    || targetWord === wordsList[i].toLowerCase()) {
-        console.log("The word is in the list");
-
-    }else{
-        console.log("The word is not in the list");
-    }
-   }
+   
 }
 
-wordSearcherIgnoreCase("Carro", testWordsList);
 
 
 
@@ -66,7 +57,6 @@ entregado por parámetro y puede variar en cantidad de palabras
 del arreglo de entrada libremente, debe retornar un objeto
 con los valores mencionados*/
 
-//Does not working
 console.log("");
 console.log("--------------------------------------");
 console.log("EXERCISE #3");
@@ -82,29 +72,20 @@ let testSampleList = [
 ];
 
 function wordLengthClassifier(wordsList) {
-    let largestWord = wordsList[0];
-    let smallestWord = wordsList[0];
-    for (let i = 0; i < wordsList.length; i++) {
-        let currentWord = wordsList[i];
-        if (currentWord.charAt(i) > largestWord.charAt(i)) {
-            largestWord = currentWord;
-        }
-    }
+    let largestWord = wordsList[i];
+    let smallestWord = wordsList[i];
 
     for (let i = 0; i < wordsList.length; i++) {
-        let currentWord2 = wordsList[i];
-        if (currentWord2.charAt(i) > smallestWord.charAt(i)) {
-            smallestWord = currentWord2;
-        }
+        const element = array[i];
+        
     }
-    console.log("In this list, the largest word is " + largestWord + " , the smallest one is " + smallestWord);
 }
-wordLengthClassifier(testSampleList);
+
+
 
 
 /*Dado un string retorna si este es o no un palíndromo. No debe diferenciar entre mayúsculas y minúsculas*/
 
-//I havent done it
 console.log("");
 console.log("--------------------------------------");
 console.log("EXERCISE #4");
@@ -115,8 +96,18 @@ let onVerificationWordC = "Gomosos";
 let onVerificationWordD = "Somos";
 
 function palindromeVerifier(word) {
-   
+    console.log(word.toLowerCase())
+    let palindromeWord = word.toLowerCase().split("").reverse().join("");
+   if ( palindromeWord === word.toLowerCase() ) {
+       console.log("The word " + word + " is palindrome")
+   }else{
+        console.log("The word " + word + " is not palindrome")
+   }
 }
+palindromeVerifier(onVerificationWordA);
+palindromeVerifier(onVerificationWordB);
+palindromeVerifier(onVerificationWordC);
+palindromeVerifier(onVerificationWordD);
 
 
 /*Dado un objeto que contiene una lista de palabras contar el
@@ -153,15 +144,23 @@ arrayJoiner(wordArrayA,wordArrayB);
 /*Dado un arreglo de strings indicar qué posiciones del arreglo
 son anagramas de una palabra base (recibida como parámetro), retorne las posiciones en un arreglo.*/
 
+console.log("");
+console.log("--------------------------------------");
+console.log("EXERCISE #7");
+
 let testWordToExplore = "amar";
 let wordsToVerify = ["amar", "arma", "rana" , "mara", "rama", "roma", "amor", "ramon", "omar"];
 
 function anagramVerifier(wordToExplore, listOfWords) {
-   // :)
+   
 }
 
 /*Dado un objeto que contiene 2 arreglos, retornar un objeto con 1
 arreglo que contiene las palabras sin vocales.*/
+
+console.log("");
+console.log("--------------------------------------");
+console.log("EXERCISE #8");
 
 let testObjMultiContainer = {
     listA : ["piraña", "cachama", "tilapia", "trucha", "carpa", "salmón"],
@@ -169,12 +168,14 @@ let testObjMultiContainer = {
 };
 
 function vocalsRemoverFromObject(objectMultiContainer) {
-    // :)
+ 
 }
 
-console.log(vocalsRemoverFromObject(testObjMultiContainer));
-
 /*Dado un arreglo de palabras reemplazar la última vocal por una x y retornar dicho arreglo.*/
+
+console.log("");
+console.log("--------------------------------------");
+console.log("EXERCISE #9");
 
 let someWordsToTest = ["compañeros", "estudiantes", "señores", "amigos", "graduandos", "artistas", "universitarios"];
 
@@ -187,10 +188,13 @@ function lastVocalReplacer(words) {
 versión al revés de alguna de las palabras de una segunda lista,
 debe contar las identificadas y retornar un objeto con ese conteo.*/
 
+console.log("");
+console.log("--------------------------------------");
+console.log("EXERCISE #10");
 
 let testListA = ["amor", "sabor", "calor","firma", "mara"];
 let testListB = ["roma", "robar", "portar", "arma", "mora"];
 
 function doubleListVerifier(listA, listB) {
-    // :)
+    
 }
