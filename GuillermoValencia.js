@@ -151,7 +151,7 @@ function lettersCounter(objectContainer) {
             }
         })
     })
-    console.log("The total number of vowels is " + countVowels +" and the total number of consonants is" + countConsonants);
+    console.log("The total number of vowels is " + countVowels +" and the total number of consonants is " + countConsonants);
  }
  lettersCounter(containerTestObject);
 
@@ -208,8 +208,22 @@ let testObjMultiContainer = {
 };
 
 function vocalsRemoverFromObject(objectMultiContainer) {
-    // :(
+    let joinArrays = objectMultiContainer.listA.concat(objectMultiContainer.listB);
+    const justOneArray = [];
+
+    for (let i = 0; i < joinArrays.length; i++) {
+        const currentWord = joinArrays[i].split("");
+        for (let i = 0; i < joinArrays[i].length; i++) {
+            if (currentWord[i] === "a" || currentWord[i] === "e" || currentWord[i] === "i" || currentWord[i] === "o" || currentWord[i] === "u"
+            || currentWord[i] === "á" || currentWord[i] === "é" || currentWord[i] === "í" || currentWord[i] === "ó" || currentWord[i] === "ú") {
+                currentWord.splice(i, 1);
+            }
+        }
+        justOneArray.push(currentWord.join(""));
+    }
+    console.log(justOneArray);
 }
+vocalsRemoverFromObject(testObjMultiContainer);
 
 
 
