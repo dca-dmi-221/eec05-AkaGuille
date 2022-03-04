@@ -48,7 +48,7 @@ let testWordsList = [
 
 // pruebe para cada palabra A, B y C
 function wordSearcherIgnoreCase(targetWord, wordsList) {
-    
+
 }
 
 
@@ -252,5 +252,28 @@ let testListA = ["amor", "sabor", "calor","firma", "mara"];
 let testListB = ["roma", "robar", "portar", "arma", "mora"];
 
 function doubleListVerifier(listA, listB) {
-    //
+    let countAnagram = 0;
+    let newListB=[];
+    let countWords = {};
+
+    for (let i = 0; i < listB.length; i++) {
+        newListB[i] = listB[i].split("").reverse().join("");
+  
+    }
+  
+    for (let i = 0; i < listA.length; i++) {
+        for(let j = 0; j < newListB.length; j++){
+            if (newListB[j] == listA[i]){
+                countAnagram++;
+            }
+        }
+    }
+
+    countWords = {
+        totalAnagramWordInTheLists: countAnagram
+    }
+    
+    console.log(countWords);
 }
+
+doubleListVerifier(testListA,testListB);
